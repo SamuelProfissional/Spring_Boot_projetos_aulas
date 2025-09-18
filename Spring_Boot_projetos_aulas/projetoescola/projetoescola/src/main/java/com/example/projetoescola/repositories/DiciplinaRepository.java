@@ -11,7 +11,7 @@ import com.example.projetoescola.models.Diciplina;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
-@Repository
+@Repository  //A anotação @Repository diz para o Spring que aquela classe é responsável por acessar o banco de dados.
 public class DiciplinaRepository {
     @Autowired // e como se estivese instanciando um objeto (Ex: Objeto objeto = new Objeto)
     private EntityManager entityManager;
