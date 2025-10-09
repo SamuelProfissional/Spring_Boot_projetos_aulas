@@ -3,6 +3,7 @@ package com.example.projetoescola.services;
 import org.springframework.stereotype.Service;
 
 import com.example.projetoescola.dtos.CategoriaCursoRequestDTO;
+import com.example.projetoescola.dtos.CursoDTO;
 import com.example.projetoescola.dtos.CursoRequestDTO;
 import com.example.projetoescola.dtos.RegraNegocioException;
 import com.example.projetoescola.models.CategoriaCurso;
@@ -36,5 +37,6 @@ public class CategoriaCursoServiceImpl implements CategoriaCursoService {
     }
 
     // DTO transferencia de dados
+ 
     
 }

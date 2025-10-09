@@ -7,10 +7,13 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class CategoriaCursoRequestDTO {
+@AllArgsConstructor
+public class CursoDTO {
 
-    private Integer id;
+    private Long id;
     private String nome;
+    private Integer cargaHoraria;
+    private CategoriaCursoDTO categoria;
+
 }

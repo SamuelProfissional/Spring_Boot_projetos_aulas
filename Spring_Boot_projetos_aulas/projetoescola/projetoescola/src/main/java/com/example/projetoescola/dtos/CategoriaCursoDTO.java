@@ -7,10 +7,11 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class CategoriaCursoRequestDTO {
-
+@AllArgsConstructor
+public class CategoriaCursoDTO {
+    
     private Integer id;
     private String nome;
+    
 }
