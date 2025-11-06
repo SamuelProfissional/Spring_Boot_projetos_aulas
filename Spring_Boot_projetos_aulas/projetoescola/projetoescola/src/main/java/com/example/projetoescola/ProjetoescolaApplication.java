@@ -35,8 +35,8 @@ public class ProjetoescolaApplication /*~~(Could not parse as Java)~~>*//*~~(Cou
 			List<Professor> listarProfessor = professorRepository.findAll();
 			// Inserir categorias
 			CategoriaCurso c1 = categoriaCursoRepository.save(new CategoriaCurso(null,"Tecnólogo",null));
-			cursoRepository.save(new Curso(null, "Analise de Sistemas", 2000, null,null));
-			cursoRepository.save(new Curso(null, "Jogos Digitais", 2050, null,null));
+			cursoRepository.save(new Curso(null, "Curso01", 2000, null,null));
+			cursoRepository.save(new Curso(null, "Curso02", 2050, null,null));
 			List<Curso> listaCursos = cursoRepository.findAll();
 			//=========================================================
 			diciplinaRepository.salvar(new Diciplina(null,"Progamação-Web"));
