@@ -13,7 +13,7 @@ import jakarta.validation.Payload;
     @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Constraint(validatedBy = NomeCursoConstraint.class)
-public @interface SenhaUsuarioValidation {
+public @interface SenhaUsuario2Validation {
     String message() default "Nome fora do padrão";
 
     Class<?>[] groups() default {};

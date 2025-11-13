@@ -1,15 +1,15 @@
 package com.example.projetoescola.validations;
 
-import com.example.projetoescola.models.Usuario;
+import com.example.projetoescola.models.Usuario2;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.val;
 
-public class SenhaUsuarioConstraint implements ConstraintValidator<SenhaUsuarioValidation, Usuario> {
+public class SenhaUsuario2Constraint implements ConstraintValidator<SenhaUsuario2Validation, Usuario2> {
     @Override
     public boolean isValid(
-        Usuario value, ConstraintValidatorContext context) {
+        Usuario2 value, ConstraintValidatorContext context) {
         try {
             if (!value.getSenha().equals(value.getConfirmarSenha())) {
                 return false;

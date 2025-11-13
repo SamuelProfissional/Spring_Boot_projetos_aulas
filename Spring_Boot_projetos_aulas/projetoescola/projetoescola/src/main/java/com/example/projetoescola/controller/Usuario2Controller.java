@@ -6,26 +6,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.projetoescola.dtos.CursoRequestDTO;
-import com.example.projetoescola.dtos.UsuarioRequestDTO;
+import com.example.projetoescola.dtos.Usuario2RequestDTO;
 import com.example.projetoescola.services.CursoService;
-import com.example.projetoescola.services.UsuarioService;
+import com.example.projetoescola.services.Usuario2Service;
 
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/usuario")
-public class UsuarioController {
+public class Usuario2Controller {
     
-    private UsuarioService usuarioService;
+    private Usuario2Service usuarioService;
 
-     public UsuarioController(UsuarioService usuarioService) {
+     public Usuario2Controller(Usuario2Service usuarioService) {
 
         this.usuarioService = usuarioService;
     }
 
 
      @PostMapping
-    public void criarUsuario(@Valid @RequestBody UsuarioRequestDTO usuarioRequestDTO) {
+    public void criarUsuario(@Valid @RequestBody Usuario2RequestDTO usuarioRequestDTO) {
         usuarioService.salvar(usuarioRequestDTO);
     }
 }

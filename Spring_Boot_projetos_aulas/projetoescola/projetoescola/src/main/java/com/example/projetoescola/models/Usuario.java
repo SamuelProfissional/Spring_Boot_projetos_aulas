@@ -1,8 +1,12 @@
 package com.example.projetoescola.models;
 
 import java.time.LocalDate;
+import java.util.Collection;
 
-import com.example.projetoescola.validations.SenhaUsuarioValidation;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.example.projetoescola.validations.SenhaUsuario2Validation;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,43 +19,51 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data // cria os getts e setters
-@NoArgsConstructor // cria um construtor vazio
-@AllArgsConstructor // cria um construtor com todos os parametros
-@Builder 
-@SenhaUsuarioValidation
-public class Usuario {
-
-
-   @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @Column(nullable = false) 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Usuario implements UserDetails {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String nome;
-
-    @Column(nullable = false) 
     private String email;
-
-    @Column(nullable = false) 
     private String senha;
+    private String perfil;
 
-    @Column(nullable = false) 
-    private String confirmarSenha;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
 
-    @Column(nullable = false) 
-    private LocalDate  dataDeNascimento;
+    @Override
+    public String getPassword() {
+        return senha;
+    }
 
+    @Override
+    public String getUsername() {
+        return email;
+    }
 
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
 
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
 
-//     nome: obrigatório, não pode ser vazio e deve ter no mínimo 3 e no máximo 50 caracteres.
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
 
-// email: obrigatório, deve ser um e-mail válido.
-
-// senha: obrigatório, deve ter no mínimo 8 caracteres.
-
-// confirmarSenha: obrigatório, deve ser igual ao campo senha.
-
-// dataDeNascimento:
-    
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }
